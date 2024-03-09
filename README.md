@@ -1,11 +1,6 @@
 # 3D Object Classification With Selective Multi-View Fusion And Shape Rendering
 This repository is for the following paper _"3D Object Classification With Selective Multi-View Fusion And Shape Rendering"_ introduced by [Mona Alzahrani](https://github.com/Mona-Alzahrani), Muhammad Usman, Randah Alharbi, [Saeed Anwar](https://saeed-anwar.github.io/), Ajmal Mian, and Tarek Helmy, 2024.
 
-<p align="center">
-  <img align="center"  src="/images/intro.gif" >
- </p> 
-  
-
 ## Requirements: 
 The model is built in _Visual Studio Code_ editor using: 
 * Python 3.9.16
@@ -44,7 +39,18 @@ The architecture of the proposed Selective Multi-View deep model (SelectiveMV) c
 
 
 ## Dataset:
-[ModelNet](https://modelnet.cs.princeton.edu/) is a large-scale 3D dataset provided in 2014 by Wu et al. from Princeton University’s Computer Science Department. [ModelNet40](https://www.cv-foundation.org/openaccess/content_cvpr_2015/html/Wu_3D_ShapeNets_A_2015_CVPR_paper.html) contains manually cleaned 3D objects without color information that belong to 40 class categories. In all of our experiments, and for a fair comparison, we have experimented with two versions of that dataset based on the camera settings from the literature:
+All experiments in this study utilize the widely recognized [ModelNet40](https://www.cv-foundation.org/openaccess/content_cvpr_2015/html/Wu_3D_ShapeNets_A_2015_CVPR_paper.html). The dataset comprises 12,311 grayscale objects categorized into 40 classes, with standard training and test splits. Specifically, it includes 9,843 objects for training and 2,468 objects for testing. It is important to note that the number of objects varies across categories, resulting in an imbalanced distribution. Therefore, two metrics, Overall Accuracy (OA) and Average Accuracy (AA), are reported. 
+
+In order to capture multiple views from each 3D object, a circular camera setup is employed, similar to [MVCNN](https://www.cv-foundation.org/openaccess/content_iccv_2015/html/Su_Multi-View_Convolutional_Neural_ICCV_2015_paper.html). Where 12 virtual cameras are positioned around the object, resulting in the extraction of 12 rendered views.
+
+<p align="center">
+  <img align="center"  src="/images/intro.gif" >
+ </p> 
+
+Furthermore, this study investigates different views with distinct feature types using various image rendering techniques. The following three representation views with varying types of features are explored:
+ <p align="center">
+  <img align="center"  src="/images/ShapeRepresentation3.png" >
+ </p> 
 
 * **ModelNet40v1** (Balanced and aligned dataset): in this version, the same training and testing splits of ModelNet40 as in [3dshapenets](https://www.cv-foundation.org/openaccess/content_cvpr_2015/html/Wu_3D_ShapeNets_A_2015_CVPR_paper.html), [MVCNN](https://www.cv-foundation.org/openaccess/content_iccv_2015/html/Su_Multi-View_Convolutional_Neural_ICCV_2015_paper.html), [RotationNet](https://openaccess.thecvf.com/content_cvpr_2018/html/Kanezaki_RotationNet_Joint_Object_CVPR_2018_paper.html), [DeepCCFV](https://ojs.aaai.org/index.php/AAAI/article/view/4868) were experimented. Where for each category, they used the first 80 training objects (or all if there are less than 80) for training, and balanced testing, they used the first 20 testing objects. They used the circular configuration for each object to extract the 12 aligned views. So, they ended up with 3,983 objects in 40 categories consisting of 3,183 training objects (38,196 views) and 800 testing objects (9,600 views).
   <p align="center">

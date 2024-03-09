@@ -27,25 +27,19 @@ The model is built in _Visual Studio Code_ editor using:
 
 ## Introduction:
 3D classification is complex and challenging because of high-dimensional data, the intricate nature of their spatial relationships, and viewpoint variations. We fill the gap in view-based 3D object classification by examining the factors that influence classification's effectiveness via determining their respective merits in feature extraction for 3D object recognition by comparing CNN-based and Transformer-based backbone networks side-by-side. Our research extends to evaluating various fusion strategies to determine the most effective method for integrating multiple views and ascertain the optimal number of views that balances classification and computation. We also probe into the effectiveness of different feature types from rendering techniques in accurately depicting 3D objects. This investigation is supported by an extensive experimental framework, incorporating a diverse set of 3D objects from the ModelNet40 dataset. Finally, based on the analysis, we present a Selective Multi-View deep model (SelectiveMV) that shows efficient performance and provides high accuracy given a few views.
-
-<p align="center">
-  <img align="center"  src="/images/Methodology3.png" title="Illustration of the proposed framework">
-  <figcaption>The proposed Selective Multi-View deep model (SelectiveMV). It consists of five phases: (A) View rendering: multiple $m$ views are captured from different viewpoints of a given 3D object. Based on the rendering technique, the rendered views are either Grayscale, shaded or depth maps. (B) Feature extraction: each extracted view is input into a pre-trained backbone network to extract the corresponding feature sets. (C) Vectorization: the detected feature sets are flattened into vectors. (D) Selective fusion: the feature vectors are compared based on their similarity using Cosine Similarity, and a vital score is obtained and normalized. The views with higher scores are selected and fused using a fusion technique to generate a global descriptor. (F) Classification: the global descriptor of the object is fed into a classifier to predict its class. The boxes in blue and the number of selected views are the key variables impacting the classification performance we evaluate.</figcaption>
-</p>
-
   
 
 ## Architecture:
-The architecture of the proposed selective multi-view deep model contains five phases:
- <br /> (A) **Multi-view extraction:** from a given 3D object, m multiple views are extracted from different viewpoints and angles. 
- <br /> (B) **Feature extraction:** each extracted view is fed to a pre-trained CNN to extract the corresponding feature stack of the detected visual features. 
- <br /> (C) **Vectorization:** the detected _m_ feature stacks are converted to _m_ feature vectors. 
- <br /> (D) **View selection:** The feature vectors are compared based on their similarity using Cosine Similarity and give a vital score that is normalized later. The more discriminative view is selected as a global descriptor based on them. 
- <br /> (D) **Object classification:** the global descriptor of the object feeds to a classifier to predict its class.
+The architecture of the proposed Selective Multi-View deep model (SelectiveMV) consists of five phases::
+ <br /> (A) **View rendering:** multiple m views are captured from different viewpoints of a given 3D object. Based on the rendering technique, the rendered views are either grayscale, shaded or depth maps. 
+ <br /> (B) **Feature extraction:** each extracted view is input into a pre-trained backbone network to extract the corresponding feature sets.
+ <br /> (C) **Vectorization:** the detected feature sets are flattened into vectors.
+ <br /> (D) **Selective fusion:** the feature vectors are compared based on their similarity using Cosine Similarity, and a vital score is obtained and normalized. The views with higher scores are selected and fused using a fusion technique to generate a global descriptor.
+ <br /> (D) **Classification:** the global descriptor of the object is fed into a classifier to predict its class. The boxes in blue and the number of selected views are the key variables impacting the classification performance we evaluate.
 
 <p align="center">
-  <img align="center" src="/images/architecture.png" title="The architecture of the proposed selective multi-view deep model">
-  <figcaption>The architecture of the proposed selective multi-view deep model. </figcaption>
+  <img align="center"  src="/images/Methodology3.png" title="Illustration of the proposed framework">
+  <figcaption>The architecture of proposed Selective Multi-View deep model (SelectiveMV). </figcaption>
 </p>
 
 

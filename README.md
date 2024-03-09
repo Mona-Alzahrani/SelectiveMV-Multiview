@@ -91,7 +91,7 @@ Since we will experiment different rendering techniques, backbone networks, numb
         * And inside each dataset folder, create new folders and rename them with backbone network names (pre-trained CNN or transformer).
     
   The folders will look like this:
-  '''
+  ```
   ---------data
             --------modelnet40v1_train
             --------modelnet40v1_test
@@ -115,9 +115,7 @@ Since we will experiment different rendering techniques, backbone networks, numb
             --------depth_modelnet40v1
                                 .
                                 .
-  '''
-
-
+  ```
    
 ## Training:
 In the training phase, we train the following five feature extractors (pre-trained CNN) seperetly:

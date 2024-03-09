@@ -8,11 +8,13 @@ This repository is for the following paper _"3D Object Classification With Selec
 
 ## Requirements: 
 The model is built in _Visual Studio Code_ editor using: 
-* Tensorflow-gpu 2.10
-* Cuda 11.2
-* cuDNN8.1 
-* Python 3.9
-*  
+* Python 3.9.16
+* Tensorflow-gpu 2.7
+* pytorch 2.0.1
+* Pytorch-cuda 11.7
+* keras 2.6
+* Transformers 4.38.2
+  
 
 ## Content:
 1. [Introduction](#introduction)

@@ -34,7 +34,7 @@ The architecture of the proposed Selective Multi-View deep model (SelectiveMV) c
 
 <p align="center">
   <img align="center"  src="/images/Methodology3.png" title="Illustration of the proposed framework">
-  <figcaption>The architecture of proposed Selective Multi-View deep model (SelectiveMV). </figcaption>
+  <figcaption>The architecture of proposed Selective Multi-View deep model (SelectiveMV). The blue boxes (in addition to number of selected views) are the key variables that we evaluate their impact in the classification performance.</figcaption>
 </p>
 
 

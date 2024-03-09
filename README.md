@@ -52,46 +52,34 @@ Furthermore, this study investigates different views with distinct feature types
   <img align="center"  src="/images/ShapeRepresentation3.png" >
  </p> 
 
-* **Grayscale Views**: These views employ surface normal maps generated using the [Phong reflection](https://dl.acm.org/doi/abs/10.1145/280811.280980) model. The mesh polygons are rendered under a perspective projection, and the shape's color will generally be grayscale as the original 3D object. (https://openaccess.thecvf.com/content_eccv_2018_workshops/w18/html/Su_A_Deeper_Look_at_3D_Shape_Classifiers_ECCVW_2018_paper.html).
+* **Grayscale Views**: These views employ surface normal maps generated using the [Phong reflection](https://dl.acm.org/doi/abs/10.1145/280811.280980) model. The mesh polygons are rendered under a perspective projection, and the color of the shape in general will be grayscale as the original 3D object. While the Grayscale color of each pixel is determined by interpolating the reflected intensity of the polygon vertices. The shapes are uniformly scaled to fit within the viewing volume. Samples of Grayscale views are: 
   <p align="center">
     <img align="center" src="/images/grayscale1.png">
   </p>
-  For a fair comparison, we used the same grayscale views rendered by [MVCNN]:
-  * **ModelNet40v1 Training** can be download from [here.](https://drive.google.com/file/d/1ZTG6DkXhR0ee8tJAUkbPGncGL98t8LqS/view?usp=sharing)
-  * **ModelNet40v1 Testing** can be download from [here.](https://drive.google.com/file/d/1yrNSe9YghIXm9s0kJTuzJC5oZYhrVMOe/view?usp=sharing)
+  
+  For a fair comparison, we used the same grayscale views rendered by [MVCNN](https://www.cv-foundation.org/openaccess/content_iccv_2015/html/Su_Multi-View_Convolutional_Neural_ICCV_2015_paper.html), [RotationNet](https://openaccess.thecvf.com/content_cvpr_2018/html/Kanezaki_RotationNet_Joint_Object_CVPR_2018_paper.html):
+  * **GreyscaleModelNet40v1 Training** can be download from [here.](https://drive.google.com/file/d/1ZTG6DkXhR0ee8tJAUkbPGncGL98t8LqS/view?usp=sharing)
+  * **GreyscaleModelNet40v1 Testing** can be download from [here.](https://drive.google.com/file/d/1yrNSe9YghIXm9s0kJTuzJC5oZYhrVMOe/view?usp=sharing)
 
   
-* **Shaded Views**: These views are also rendered using the Phong reflection model, but the resulting images are grayscale with a black background. The camera's field of view is adjusted to encapsulate the 3D object within the image canvas tightly. [RotationNet](https://openaccess.thecvf.com/content_cvpr_2018/html/Kanezaki_RotationNet_Joint_Object_CVPR_2018_paper.html), [view-GCN](https://openaccess.thecvf.com/content_CVPR_2020/html/Wei_View-GCN_View-Based_Graph_Convolutional_Network_for_3D_Shape_Analysis_CVPR_2020_paper.html), [MVTN](https://openaccess.thecvf.com/content/ICCV2021/html/Hamdi_MVTN_Multi-View_Transformation_Network_for_3D_Shape_Recognition_ICCV_2021_paper.html) were experimented. This original version of the dataset is not balanced where there is a diverse number of objects across diverse categories. It contains 12,311 3D objects split into 9,843 for training and 2,468 for testing. The literature used a spherical configuration to extract the 20 unaligned views from each object to end up with a total of 196,860 for training and 49,360 for testing.
+* **Shaded Views**: These views are also rendered using the Phong reflection model, but the resulting images are grayscale with a black background. The camera's field of view is adjusted to encapsulate the 3D object within the image canvas tightly. Samples of Shaded views are:
   <p align="center">
     <img align="center" src="/images/shaded1.png">
   </p>
  
-  * **ShadedModelNet40v1 Training** can be download from [here.](https://drive.google.com/file/d/1xxTCtDfTJDdEpkNQOoCvtGM6va2NYV2r/view?usp=sharing)
-  * **ShadedModelNet40v1 Testing** can be download from [here.](https://drive.google.com/file/d/1WIuRJe7Oz0vVLi1fAsbELyfm95A09EdI/view?usp=sharing)
+  * **ShadedModelNet40 Training** can be download from [here.](https://drive.google.com/file/d/1xxTCtDfTJDdEpkNQOoCvtGM6va2NYV2r/view?usp=sharing)
+  * **ShadedModelNet40 Testing** can be download from [here.](https://drive.google.com/file/d/1WIuRJe7Oz0vVLi1fAsbELyfm95A09EdI/view?usp=sharing)
 
 
-* **Depth Views**: In this case, the views solely record the depth value of each pixel.
+* **Depth Views**: In this case, the views solely record the depth value of each pixel. Samples of Depth views are
  <p align="center">
     <img align="center" src="/images/depth1.png">
   </p>
  
 
-
-*   [RotationNet](https://openaccess.thecvf.com/content_cvpr_2018/html/Kanezaki_RotationNet_Joint_Object_CVPR_2018_paper.html), [view-GCN](https://openaccess.thecvf.com/content_CVPR_2020/html/Wei_View-GCN_View-Based_Graph_Convolutional_Network_for_3D_Shape_Analysis_CVPR_2020_paper.html), [MVTN](https://openaccess.thecvf.com/content/ICCV2021/html/Hamdi_MVTN_Multi-View_Transformation_Network_for_3D_Shape_Recognition_ICCV_2021_paper.html) were experimented. This original version of the dataset is not balanced where there is a diverse number of objects across diverse categories. It contains 12,311 3D objects split into 9,843 for training and 2,468 for testing. The literature used a spherical configuration to extract the 20 unaligned views from each object to end up with a total of 196,860 for training and 49,360 for testing.
-  <p align="center">
-    <img align="center" src="/images/sphCameraConfig.png">
-    <figcaption>Spherical configuration (20 views). </figcaption>
-  </p>
   
-
-  and [MVCNN](https://openaccess.thecvf.com/content_eccv_2018_workshops/w18/html/Su_A_Deeper_Look_at_3D_Shape_Classifiers_ECCVW_2018_paper.html). The rendered views were grayscale images with dimensions of 224 × 224 pixels and black backgrounds. The camera's field of view was adjusted so that the image canvas tightly encapsulated the 3D object.
-  <p align="center">
-    <img align="center" src="/images/ShadedDataset.png">
-    <figcaption>Shaded multi-view images (12 views). </figcaption>
-  </p>
-  
-  * **ShadedModelNet40v1 Training** can be download from [here.](https://drive.google.com/file/d/1xxTCtDfTJDdEpkNQOoCvtGM6va2NYV2r/view?usp=sharing)
-  * **ShadedModelNet40v1 Testing** can be download from [here.](https://drive.google.com/file/d/1WIuRJe7Oz0vVLi1fAsbELyfm95A09EdI/view?usp=sharing)
+  * **DepthdModelNet40 Training** can be download from [here.](https://drive.google.com/file/d/1oikKSx8ksaepEq8kMLEB9-EIPCkiIS4Z/view?usp=sharing)
+  * **DepthdModelNet40 Testing** can be download from [here.](https://drive.google.com/file/d/1NviSUPru3QmMgKzP08kQuzOk1zz9i6a1/view?usp=sharing)
 
 ## Getting Started:
 Since we will experiment different versions of the datasets, feature extractors and classifiers, we do the following to organize the data and results: 

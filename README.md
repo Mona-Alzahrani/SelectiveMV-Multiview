@@ -44,7 +44,7 @@ All experiments in this study utilize the widely recognized [ModelNet40](https:/
 In order to capture multiple views from each 3D object, a circular camera setup is employed, similar to [MVCNN](https://www.cv-foundation.org/openaccess/content_iccv_2015/html/Su_Multi-View_Convolutional_Neural_ICCV_2015_paper.html). Where 12 virtual cameras are positioned around the object, resulting in the extraction of 12 rendered views.
 
 <p align="center">
-  <img align="center"  src="/images/intro.gif" >
+  <img align="center"  src="/images/intro-2.gif" >
  </p> 
 
 Furthermore, this study investigates different views with distinct feature types using various image rendering techniques. The following three representation views with varying types of features are explored:

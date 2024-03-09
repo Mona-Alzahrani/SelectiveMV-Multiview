@@ -41,7 +41,7 @@ The architecture of the proposed Selective Multi-View deep model (SelectiveMV) c
 ## Dataset:
 All experiments in this study utilize the widely recognized [**ModelNet40**](https://www.cv-foundation.org/openaccess/content_cvpr_2015/html/Wu_3D_ShapeNets_A_2015_CVPR_paper.html). The dataset comprises 12,311 grayscale objects categorized into 40 classes, with standard training and test splits. Specifically, it includes 9,843 objects for training and 2,468 objects for testing. It is important to note that the number of objects varies across categories, resulting in an imbalanced distribution. Therefore, two metrics, Overall Accuracy (OA) and Average Accuracy (AA), are reported. 
 
-In order to capture multiple views from each 3D object, a circular camera setup is employed, similar to [MVCNN](https://www.cv-foundation.org/openaccess/content_iccv_2015/html/Su_Multi-View_Convolutional_Neural_ICCV_2015_paper.html). Where 12 virtual cameras are positioned around the object, resulting in the extraction of 12 rendered views:
+In order to capture multiple views from each 3D object, a circular camera setup is employed, similar to [MVCNN](https://www.cv-foundation.org/openaccess/content_iccv_2015/html/Su_Multi-View_Convolutional_Neural_ICCV_2015_paper.html). In many related studies, such as [MVCNN](https://www.cv-foundation.org/openaccess/content_iccv_2015/html/Su_Multi-View_Convolutional_Neural_ICCV_2015_paper.html), [RotationNet](https://openaccess.thecvf.com/content_cvpr_2018/html/Kanezaki_RotationNet_Joint_Object_CVPR_2018_paper.html), [view-GCN](https://openaccess.thecvf.com/content_CVPR_2020/html/Wei_View-GCN_View-Based_Graph_Convolutional_Network_for_3D_Shape_Analysis_CVPR_2020_paper.html), and [MVTN](https://openaccess.thecvf.com/content/ICCV2021/html/Hamdi_MVTN_Multi-View_Transformation_Network_for_3D_Shape_Recognition_ICCV_2021_paper.html), 12 virtual cameras are positioned around the object, resulting in the extraction of 12 rendered views:
 
 <p align="center">
   <img align="center"  src="/images/intro-2.gif" >
@@ -52,28 +52,31 @@ Furthermore, this study investigates different views with distinct feature types
   <img align="center"  src="/images/ShapeRepresentation3.png" >
  </p> 
 
-* **Grayscale Views**: These views employ surface normal maps generated using the Phong reflection model. The mesh polygons are rendered under a perspective projection, and the shape's color will generally be grayscale as the original 3D object. For a fair comparison, we used the same grayscale views rendered by [MVCNN](https://openaccess.thecvf.com/content_eccv_2018_workshops/w18/html/Su_A_Deeper_Look_at_3D_Shape_Classifiers_ECCVW_2018_paper.html).
+* **Grayscale Views**: These views employ surface normal maps generated using the [Phong reflection](https://dl.acm.org/doi/abs/10.1145/280811.280980) model. The mesh polygons are rendered under a perspective projection, and the shape's color will generally be grayscale as the original 3D object. (https://openaccess.thecvf.com/content_eccv_2018_workshops/w18/html/Su_A_Deeper_Look_at_3D_Shape_Classifiers_ECCVW_2018_paper.html).
   <p align="center">
-    <img align="center" src="/images/circCameraConfig.png">
-    <figcaption>Circular configuration (12 views). </figcaption>
+    <img align="center" src="/images/grayscale1.png">
   </p>
-  
+  For a fair comparison, we used the same grayscale views rendered by [MVCNN]:
   * **ModelNet40v1 Training** can be download from [here.](https://drive.google.com/file/d/1ZTG6DkXhR0ee8tJAUkbPGncGL98t8LqS/view?usp=sharing)
   * **ModelNet40v1 Testing** can be download from [here.](https://drive.google.com/file/d/1yrNSe9YghIXm9s0kJTuzJC5oZYhrVMOe/view?usp=sharing)
 
   
 * **Shaded Views**: These views are also rendered using the Phong reflection model, but the resulting images are grayscale with a black background. The camera's field of view is adjusted to encapsulate the 3D object within the image canvas tightly. [RotationNet](https://openaccess.thecvf.com/content_cvpr_2018/html/Kanezaki_RotationNet_Joint_Object_CVPR_2018_paper.html), [view-GCN](https://openaccess.thecvf.com/content_CVPR_2020/html/Wei_View-GCN_View-Based_Graph_Convolutional_Network_for_3D_Shape_Analysis_CVPR_2020_paper.html), [MVTN](https://openaccess.thecvf.com/content/ICCV2021/html/Hamdi_MVTN_Multi-View_Transformation_Network_for_3D_Shape_Recognition_ICCV_2021_paper.html) were experimented. This original version of the dataset is not balanced where there is a diverse number of objects across diverse categories. It contains 12,311 3D objects split into 9,843 for training and 2,468 for testing. The literature used a spherical configuration to extract the 20 unaligned views from each object to end up with a total of 196,860 for training and 49,360 for testing.
   <p align="center">
-    <img align="center" src="/images/sphCameraConfig.png">
-    <figcaption>Spherical configuration (20 views). </figcaption>
+    <img align="center" src="/images/shaded1.png">
   </p>
  
-  * **ModelNet40v2 Training** can be download from [here.](https://drive.google.com/file/d/1UiENdsOgCczr_x8-ILCA7GOpp-C1_Pqf/view?usp=sharing)
-  * **ModelNet40v2 Testing** can be download from [here.](https://drive.google.com/file/d/1Vn4D3xV20fwN9SechsnIsgyfDDeZ08dv/view?usp=sharing)
+  * **ShadedModelNet40v1 Training** can be download from [here.](https://drive.google.com/file/d/1xxTCtDfTJDdEpkNQOoCvtGM6va2NYV2r/view?usp=sharing)
+  * **ShadedModelNet40v1 Testing** can be download from [here.](https://drive.google.com/file/d/1WIuRJe7Oz0vVLi1fAsbELyfm95A09EdI/view?usp=sharing)
 
 
 * **Depth Views**: In this case, the views solely record the depth value of each pixel.
-*
+ <p align="center">
+    <img align="center" src="/images/depth1.png">
+  </p>
+ 
+
+
 *   [RotationNet](https://openaccess.thecvf.com/content_cvpr_2018/html/Kanezaki_RotationNet_Joint_Object_CVPR_2018_paper.html), [view-GCN](https://openaccess.thecvf.com/content_CVPR_2020/html/Wei_View-GCN_View-Based_Graph_Convolutional_Network_for_3D_Shape_Analysis_CVPR_2020_paper.html), [MVTN](https://openaccess.thecvf.com/content/ICCV2021/html/Hamdi_MVTN_Multi-View_Transformation_Network_for_3D_Shape_Recognition_ICCV_2021_paper.html) were experimented. This original version of the dataset is not balanced where there is a diverse number of objects across diverse categories. It contains 12,311 3D objects split into 9,843 for training and 2,468 for testing. The literature used a spherical configuration to extract the 20 unaligned views from each object to end up with a total of 196,860 for training and 49,360 for testing.
   <p align="center">
     <img align="center" src="/images/sphCameraConfig.png">

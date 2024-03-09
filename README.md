@@ -83,31 +83,39 @@ Furthermore, this study investigates different views with distinct feature types
   * **DepthdModelNet40 Testing** can be download from [here.](https://drive.google.com/file/d/1NviSUPru3QmMgKzP08kQuzOk1zz9i6a1/view?usp=sharing)
 
 ## Getting Started:
-Since we will experiment different versions of the datasets, feature extractors and classifiers, we do the following to organize the data and results: 
+Since we will experiment different rendering techniques, backbone networks, numbers of selected views, fusion startegies, and classifiers, we do the following to organize the data and results: 
 
 * Prepare two folders:
    * data folder: put all the unzip dataset folders inside it. Note that each dataset will have two folders one for training and other for testing. The data folder will also be used later by our code to save the extracted features.
-     <p align="left">
-    <img align="center" src="/images/dataFolder.png">
-     </p>
-
-
    * Results folder: create new folders inside it and rename them with dataset names (one folder for each dataset). 
-     <p align="left">
-    <img align="center" src="/images/ResultsFolder.png">
-     </p>
-<br />
-<br />
-        * And inside each dataset folder, create new folders and rename them with feature extractor names (pre-trained CNN names).
-         <p align="left">
-              <img align="center" src="/images/ResultsDatasetFolders.png">
-          </p>
-     <br />
-<br />
-             * And inside each feature extractor folder, create new folders and rename them with number of epochs used for training (here we trained on 20 and 30 epochs).
-             <p align="left">
-                <img align="center" src="/images/epochsFolder.png">
-             </p>
+        * And inside each dataset folder, create new folders and rename them with backbone network names (pre-trained CNN or transformer).
+    
+  The folders will look like this:
+  '''
+  ---------data
+            --------modelnet40v1_train
+            --------modelnet40v1_test
+            --------shaded_modelnet40v1_train
+            --------shaded_modelnet40v1_test
+            --------depth_modelnet40v1_train
+            --------depth_modelnet40v1_test
+
+  ---------Results
+            --------modelnet40v1
+                      --------VGG16
+                      --------VGG19
+                      --------ResNet50
+                      --------ResNet152
+                      --------EfficientNetB0
+                      --------ViT
+                      --------BEiT
+            --------shaded_modelnet40v1
+                                .
+                                .
+            --------depth_modelnet40v1
+                                .
+                                .
+  '''
 
 
    

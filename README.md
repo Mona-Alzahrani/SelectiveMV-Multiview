@@ -229,7 +229,7 @@ For those who find the provided code beneficial for their research or work, we k
 ```
 @article{SelectiveMV2024,
   title={Selective Multi-View Deep Model for 3D Object Classification},
-  author={Alzahrani, Mona and Usman, Muhammad and Anwar, Saeed and Helmy, Tarek},
+  author={Alzahrani, Mona and Usman, Muhammad and Alharbi, Randah and Anwar, Saeed and Mian, Ajmal and Helmy, Tarek},
 }
 ```
 

@@ -57,7 +57,7 @@ Furthermore, this study investigates different views with distinct feature types
     <img align="center" src="/images/grayscale1.png">
   </p>
   
-  For a fair comparison, we used the same grayscale views rendered by [MVCNN](https://www.cv-foundation.org/openaccess/content_iccv_2015/html/Su_Multi-View_Convolutional_Neural_ICCV_2015_paper.html), [RotationNet](https://openaccess.thecvf.com/content_cvpr_2018/html/Kanezaki_RotationNet_Joint_Object_CVPR_2018_paper.html):
+  For a fair comparison, we used the same grayscale views rendered by [MVCNN](https://www.cv-foundation.org/openaccess/content_iccv_2015/html/Su_Multi-View_Convolutional_Neural_ICCV_2015_paper.html):
   * **GreyscaleModelNet40v1 Training** can be download from [here.](https://drive.google.com/file/d/1ZTG6DkXhR0ee8tJAUkbPGncGL98t8LqS/view?usp=sharing)
   * **GreyscaleModelNet40v1 Testing** can be download from [here.](https://drive.google.com/file/d/1yrNSe9YghIXm9s0kJTuzJC5oZYhrVMOe/view?usp=sharing)
 
@@ -66,7 +66,8 @@ Furthermore, this study investigates different views with distinct feature types
   <p align="center">
     <img align="center" src="/images/shaded1.png">
   </p>
- 
+
+  For a fair comparison, we used the same shaded views rendered by [MVCNN-new](https://openaccess.thecvf.com/content_eccv_2018_workshops/w18/html/Su_A_Deeper_Look_at_3D_Shape_Classifiers_ECCVW_2018_paper.html):
   * **ShadedModelNet40 Training** can be download from [here.](https://drive.google.com/file/d/1xxTCtDfTJDdEpkNQOoCvtGM6va2NYV2r/view?usp=sharing)
   * **ShadedModelNet40 Testing** can be download from [here.](https://drive.google.com/file/d/1WIuRJe7Oz0vVLi1fAsbELyfm95A09EdI/view?usp=sharing)
 
@@ -77,7 +78,7 @@ Furthermore, this study investigates different views with distinct feature types
   </p>
  
 
-  
+  For a fair comparison, we used the same depth views rendered by [MVCNN-new](https://openaccess.thecvf.com/content_eccv_2018_workshops/w18/html/Su_A_Deeper_Look_at_3D_Shape_Classifiers_ECCVW_2018_paper.html):
   * **DepthdModelNet40 Training** can be download from [here.](https://drive.google.com/file/d/1oikKSx8ksaepEq8kMLEB9-EIPCkiIS4Z/view?usp=sharing)
   * **DepthdModelNet40 Testing** can be download from [here.](https://drive.google.com/file/d/1NviSUPru3QmMgKzP08kQuzOk1zz9i6a1/view?usp=sharing)
 

@@ -118,17 +118,13 @@ Since we will experiment different rendering techniques, backbone networks, numb
   ```
    
 ## Training:
-In the training phase, we train the following five feature extractors (pre-trained CNN) seperetly:
+In the training phase, we used the following seven pre-trained backbone seperetly:
               <p align="center">
-                <img align="center" src="/images/featureExtractors.png">
-             </p>
-And we train the following two classifiers:
-              <p align="center">
-                <img align="center" src="/images/classifiers.png">
+                <img align="center" src="/images/backbones.png">
              </p>
 
              
-To train the feature extractor and classifiers, run **Training.ipynb** Jupyter Notebook after you modify the following:
+To train the classifiers, run **Training.ipynb** Jupyter Notebook after you modify the following:
 1. Track and replace the paths of data and Results folders with your paths:
    ```shell
    "C:/Users/mona/Desktop/Results/"

@@ -1,6 +1,11 @@
 # 3D Object Classification With Selective Multi-View Fusion And Shape Rendering
 This repository is for the following paper _"3D Object Classification With Selective Multi-View Fusion And Shape Rendering"_ introduced by [Mona Alzahrani](https://github.com/Mona-Alzahrani), Muhammad Usman, Randah Alharbi, [Saeed Anwar](https://saeed-anwar.github.io/), Ajmal Mian and Tarek Helmy, 2024.
 
+<p align="center">
+  <img align="center"  src="/images/intro.png" >
+ </p> 
+  
+
 ## Requirements: 
 The model is built in _Visual Studio Code_ editor using: 
 * Tensorflow-gpu 2.10

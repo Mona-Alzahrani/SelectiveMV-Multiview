@@ -133,12 +133,12 @@ To run an experiment, use the following guidline to guide you to which files you
 * **Majority-Voting Multi-view Experiment**: Use the following files:
   * For training: **Training-SV+Voting.ipynb** 
   * For testing: **Testing-MV-Voting.ipynb** <br>
-Note: all samples are used for training; and late Majority-Voting fusion needed in testing. 
+  Note: all samples are used for training; and late Majority-Voting fusion needed in testing. 
 
 * **Max-pooling Multi-view Experiment**: Use the following files:
   * For training: **Training-MV-Max+Sum.ipynb** 
   * For testing: **Testing-MV-Max+Sum.ipynb** <br>
-  * Note: early Max-pooling fusion needed in training and testing.
+  Note: early Max-pooling fusion needed in training and testing.
 
 * **Sum-pooling Multi-view Experiment**: Use the following files:
   * For training: **Training-MV-Max+Sum.ipynb**

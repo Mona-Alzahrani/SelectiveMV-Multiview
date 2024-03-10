@@ -203,7 +203,7 @@ However, BEiT-B can be considered better than ResNet-152 and all other backbones
 #### The Effect of the Number of Views:
 In this experiment, each experimented rendering technique is considered separately with different quantities of selected views. This approach allows for an in-depth analysis of how the number of perspectives within each rendering technique impacts the classification performance of the 3D objects. The relationship between the number of views and the classification accuracy of various 3D classification models including our SelectiveMV model with BEit-B backbone, [Ma et al.](https://ieeexplore.ieee.org/abstract/document/8490588/), [Pairwise](https://openaccess.thecvf.com/content_cvpr_2016/html/Johns_Pairwise_Decomposition_of_CVPR_2016_paper.html), [MVCNN](https://www.cv-foundation.org/openaccess/content_iccv_2015/html/Su_Multi-View_Convolutional_Neural_ICCV_2015_paper.html), and [3DShapeNets](https://www.cv-foundation.org/openaccess/content_cvpr_2015/html/Wu_3D_ShapeNets_A_2015_CVPR_paper.html) is illustrated in the following figure:
 <p align="center">
-    <img align="center" src="/images/NoV3.png">
+    <img align="center" src="/images/NoV3.png" width="600">
     <figcaption>Effect of the selected number of views. The number of views vs. overall accuracy of different 3D classification models, including our SelectiveMV, is plotted. G, Sh, and D refer to grayscale, shaded, and depth, respectively. </figcaption>
   </p>
 
@@ -229,7 +229,7 @@ The SelectiveMV could classify remarkably similar classes, such as dresser and n
 ### Selection Mechanism:
 In this analysis, we seek to visualize the selective approach with various selected views, each offering a distinct insight into the object's structure. These selected views span from a single view to a collection of twelve. The qualitative results highlighting the selected views of the piano's 3D model representation with Shaded views are presented: 
 <p align="center">
-    <img align="center" src="/images/SelectedViews-BEiT-sh.png" width="800">
+    <img align="center" src="/images/SelectedViews-BEiT-sh.png" width="600">
     <figcaption>Qualitative results of selected views of a piano 3D object based on the features extracted by BEit-B. The selected number of views are 1, 3, 6, and all 12. </figcaption>
   </p>
 

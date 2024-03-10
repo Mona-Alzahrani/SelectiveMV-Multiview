@@ -213,34 +213,32 @@ Based on the analysis of the data presented, it can be observed that the perform
 The comparative analysis illustrated above, clearly underscores the exceptional performance of our SelectiveMV (Shaded) model in the realm of 3D object classification. The model consistently outperforms established benchmarks such as [Ma et al.](https://ieeexplore.ieee.org/abstract/document/8490588/), [Pairwise](https://openaccess.thecvf.com/content_cvpr_2016/html/Johns_Pairwise_Decomposition_of_CVPR_2016_paper.html), [MVCNN](https://www.cv-foundation.org/openaccess/content_iccv_2015/html/Su_Multi-View_Convolutional_Neural_ICCV_2015_paper.html), and [3DShapeNets](https://www.cv-foundation.org/openaccess/content_cvpr_2015/html/Wu_3D_ShapeNets_A_2015_CVPR_paper.html) as evidenced by higher classification accuracy across varying numbers of views. Notably, SelectiveMV (Shaded) maintains its lead in accuracy irrespective of whether the input consists of fewer or more views. The only exception arises with the comparison to  [Ma et al.](https://ieeexplore.ieee.org/abstract/document/8490588/) model when utilizing 12 views; in this case, their model slightly edges out ours. Intriguingly, however, our SelectiveMV (Shaded) with just a single view can surpass the accuracy of Ma et al.'s 12-view model. This remarkable capability of SelectiveMV (Shaded) attests to its robustness and the sophistication of its approach, particularly when harnessing Shaded views. The implications of these findings are significant, as they not only validate the efficacy of our model but also position it as a frontrunner in 3D object classification.
 
  
-### Visual Results:
-In this work, we consider and experiment with the best discriminative view differently. The first selection technique, considers the _Most Similar View (MSV)_ as a considerably reasonable discriminating view because it could contain most features on other views corresponding to the same object. The _MSV_ has a higher cosine similarity (a higher important score). The other way is by considering the _Most Dissimilar View (MDV)_ as the best discriminative view due to the unique and irredundant features of different views corresponding to the same object. The _MDV_ is the view that has the lower cosine similarity (lower important score).
+### SelectiveMV Analysis:
+Based on the above analysis, we reach the best settings for the SelectiveMV model by using shaded views, BEiT-B, majority-voting, and FCN as the chosen rendering technique, backbone network, fusion strategy, and classifier, respectively. This chosen setting achieved the highest 3D classification accuracies, 91.98%, 92.54%, and 92.79% OA, with only 1, 3, and 6 selected views, respectively. SelectiveMV can achieve 100% accuracy in airplane, bed, car, guitar, and toilet classes and more than 90% in bookshelf, bottle, chair, glass-box, mantel, monitor, piano, range-hood, plant, sofa, and tv-stand classes. The confusion matrix of SelectiveMV with the best settings is shown: 
 <p align="center">
-    <img align="center" src="/images/MSV_and_MDV.png">
-    <figcaption> The set of 12 circular views obtained from sample objects and their corresponding importance scores are displayed. Views with the highest importance scores, representing the Most Similar Views (MSV), are highlighted with green boxes. Conversely, views with the lowest importance scores, representing the Most Dissimilar Views (MDV), are enclosed in brown boxes.. </figcaption>
+    <img align="center" src="/images/cm-Beit.png" width="800">
+    <figcaption> The confusion matrix achieved by the Transformer-based BEiT backbone. </figcaption>
+  </p>
+  
+The SelectiveMV could classify remarkably similar classes, such as dresser and nightstand, with 76% and 69%, respectively. However, the dataset includes the same objects that are classified under different classes such as flower-pot and plant, which confused our classifier and made it able to classify the one class with the highest samples (plant with 240 training objects lead to 88% accuracy) and fail on the another with lowest samples (flower-pot with 149 training objects lead to 4% accuracy):
+<p align="center">
+    <img align="center" src="/images/Similar-2.png" width="800">
+    <figcaption>Some of the similar 3D objects from the ModelNet40 training set that belong to different classes: A) Dresser and night-stand, B) Flower-pot and plant. </figcaption>
+  </p>
+  
+### Selection Mechanism:
+In this analysis, we seek to visualize the selective approach with various selected views, each offering a distinct insight into the object's structure. These selected views span from a single view to a collection of twelve. The qualitative results highlighting the selected views of the piano's 3D model representation with Shaded views are presented: 
+<p align="center">
+    <img align="center" src="/images/SelectedViews-BEiT-sh.png" width="800">
+    <figcaption>Qualitative results of selected views of a piano 3D object based on the features extracted by BEit-B. The selected number of views are 1, 3, 6, and all 12. </figcaption>
   </p>
 
-Here, we use the [Grad-CAM](https://openaccess.thecvf.com/content_iccv_2017/html/Selvaraju_Grad-CAM_Visual_Explanations_ICCV_2017_paper.html) technique to analyze the predicted labels to highlight the regions on the views responsible for the classification. We show some correctly predicted views by the proposed model with their corresponding feature maps highlighted with Guided GradCam showing the responsible regions that led to the correct classification. These feature maps show how the proposed model selects the views that contain distinguishing features, such as shelves in bookshelves and circular edges in bowls.
+The 3D rounded nature objects (e.g., bottles) are characterized by their spherical geometries. Due to their symmetrical shapes, multiple views rendered around these objects are expected to have a high degree of similarity. An example of our selection approach's accuracy, giving almost similar importance scores due to the high similarity between the rendered views is shown:
 <p align="center">
-    <img align="center" src="/images/CorrectClasses1.png">
-    <figcaption>Samples of feature maps belong to correctly classified labels highlighted with the Grad-CAM technique to show the responsible regions that led to the classification. </figcaption>
+    <img align="center" src="/images/bottle-object-sh.png">
+    <figcaption>Multi-view representations of rounded nature objects (Bottle) in Shaded views. The similarity of views leads to almost equal importance scoring. </figcaption>
   </p>
-
-It has been found that top confusions happened when: i) "flower pot" predicted as "plant", ii) "dressers" predicted as "night stand", and iii) "plant" predicted as "flower pot". Even for human observers, distinguishing between these specific pairs of classes can be challenging due to the ambiguity present.
-<p align="center">
-    <img align="center" src="/images/MissclassifiedClasses.png">
-    <figcaption>Multi-view samples from ModelNet40v1 dataset of the most wrongly classified objects by the proposed model. </figcaption>
-  </p>
-
-
-  Since _Most Similar Views (MSV)_ give better results, input and output of the proposed model will be as follow: Given a 3D object as input, our proposed model generates _m_ multi-view images from the 3D object and assigns importance scores based on their cosine similarity, in which the view with the highest importance score is selected as the global descriptor to classify the object and finally, predict its category as output.
-
-<p align="center">
-    <img align="center" src="/images/SelectedView.png">
-    <figcaption>Input and output of the proposed model. </figcaption>
-  </p>
-
-
+  
 ## Citation:
 For those who find the provided code beneficial for their research or work, we kindly request citing the following paper:
 ```

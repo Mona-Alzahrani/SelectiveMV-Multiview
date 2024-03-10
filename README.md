@@ -117,14 +117,28 @@ Since we will experiment different rendering techniques, backbone networks, numb
                                 .
   ```
    
-## Training:
-In the training phase, we used the following seven pre-trained backbone seperetly:
+## Feature Extraction:
+For feature extraction, we used the following seven pre-trained backbones seperetly:
               <p align="center">
                 <img align="center" src="/images/backbones.png">
              </p>
 
-             
-To train the classifiers, run **Training.ipynb** Jupyter Notebook after you modify the following:
+## Training and Testing:             
+To run an experiment, use the following guidline to guide you to which files you should use for training and testing:
+* **Single View Experiment**: run **Training-SV+Voting.ipynb** Jupyter Notebook for training, and **Testing-SV.ipynb** Jupyter Notebook for testing. Note: all samples are used for training; and no fusion needed  in testing.
+* **Majority-Voting Experiment**: run **Training-SV+Voting.ipynb** Jupyter Notebook for training, and **Testing-MV-Voting.ipynb** Jupyter Notebook for testing. Note: all samples are used for training; and late Majority-Voting fusion needed in testing.
+* **Max-polling Experiment**: run **Training-MV-Max+Sum.ipynb** Jupyter Notebook for training, and **Testing-MV-Max+Sum.ipynb** Jupyter Notebook for testing. Note: all samples are used for training; and late fusion needed in testing.
+
+
+
+**Testing-MV-Max+Sum.ipynb** Jupyter Notebook 
+**Testing-MV-Voting.ipynb** Jupyter Notebook 
+**Testing-SV.ipynb** Jupyter Notebook 
+**Training-MV-Max+Sum.ipynb** Jupyter Notebook
+**Training-SV+Voting.ipynb** Jupyter Notebook 
+
+## Training:
+Jupyter Notebook after you modify the following:
 1. Track and replace the paths of data and Results folders with your paths:
    ```shell
    "C:/Users/mona/Desktop/Results/"

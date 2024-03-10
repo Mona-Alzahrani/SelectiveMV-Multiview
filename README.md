@@ -172,7 +172,7 @@ We start a comparison with existing 3D object classification models. Then, we pe
 ### Comparison with 3D Classification Models:
 Our SelectiveMV model is benchmarked against existing state-of-the-art techniques within both view-based and model-based categories. SelectiveMV demonstrates exceptional performance, outperforming the alternatives, which is a testament to its robustness and effective design. It adeptly handles the input data's intricacies, whether in the form of multi-angle views or complex 3D models, further establishing its superiority in the current landscape of 3D object classification methodologies:
   <p align="center">
-    <img align="center" src="/images/comparisionToRW.png" width="200">
+    <img align="center" src="/images/comparisionToRW.png" width="600">
   </p>
   
 ### Ablation Study:
@@ -180,7 +180,7 @@ We analyze the effect of backbone networks, rendering techniques, fusion strateg
 #### The Effect of the Backbone Network:
 This experiment focuses on the accuracy of different backbone architectures and rendering techniques of SelectiveMV for feature extraction. These models were tasked with processing all the views, combined using max-pooling as a fusion strategy to generate the global descriptors which later classsify using FCL. The detailed results are reported in the following table:
   <p align="center">
-    <img align="center" src="/images/BackboneResults.png" width="200">
+    <img align="center" src="/images/BackboneResults.png" width="600">
   </p>
 In general, ResNet-152 and BEiT-B stood out from the crowd, leading the charge as the most effective CNN-based and Transformer-based models, respectively, among all the rendering techniques. Delving into specifics, ResNet-152 showed impressive performance, especially when fed with shaded views, where it scored an OA of 91.82%. This made it the most proficient among its CNN-based peers. Where VGG-16, followed by VGG-19, were the worst-performing CNN backbones for all the rendering views. On the flip side, BEiT-B showed an OA of 90.72% . This performance edged out the ViT-B. Interestingly, these top models maintained high performance across all rendering techniques we considered, including grayscale, shaded, and depth. Given ResNet-152 and BEiT-B's standout performance, we will concentrate our efforts on them in subsequent experiments, as they have proven to be the most effective models among those tested. 
 

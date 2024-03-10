@@ -120,7 +120,7 @@ Since we will experiment different rendering techniques, backbone networks, numb
 ## Feature Extraction:
 For feature extraction, we used the following seven pre-trained backbones seperetly:
               <p align="center">
-                <img align="center" src="/images/backbones.png">
+                <img align="center" src="/images/backbones.png" width="600">
              </p>
 
 ## Training and Testing:             
@@ -172,7 +172,7 @@ We start a comparison with existing 3D object classification models. Then, we pe
 ### Comparison with 3D Classification Models:
 Our SelectiveMV model is benchmarked against existing state-of-the-art techniques within both view-based and model-based categories. SelectiveMV demonstrates exceptional performance, outperforming the alternatives, which is a testament to its robustness and effective design. It adeptly handles the input data's intricacies, whether in the form of multi-angle views or complex 3D models, further establishing its superiority in the current landscape of 3D object classification methodologies:
   <p align="center">
-    <img align="center" src="/images/comparisionToRW.png">
+    <img align="center" src="/images/comparisionToRW.png" width="200">
   </p>
   
 ### Ablation Study:
@@ -180,8 +180,17 @@ We analyze the effect of backbone networks, rendering techniques, fusion strateg
 #### The Effect of the Backbone Network:
 This experiment focuses on the accuracy of different backbone architectures and rendering techniques of SelectiveMV for feature extraction. These models were tasked with processing all the views, combined using max-pooling as a fusion strategy to generate the global descriptors which later classsify using FCL. The detailed results are reported in the following table:
   <p align="center">
-    <img align="center" src="/images/BackboneResults.png">
+    <img align="center" src="/images/BackboneResults.png" width="200">
   </p>
+In general, ResNet-152 and BEiT-B stood out from the crowd, leading the charge as the most effective CNN-based and Transformer-based models, respectively, among all the rendering techniques. Delving into specifics, ResNet-152 showed impressive performance, especially when fed with shaded views, where it scored an OA of 91.82%. This made it the most proficient among its CNN-based peers. Where VGG-16, followed by VGG-19, were the worst-performing CNN backbones for all the rendering views. On the flip side, BEiT-B showed an OA of 90.72% . This performance edged out the ViT-B. Interestingly, these top models maintained high performance across all rendering techniques we considered, including grayscale, shaded, and depth. Given ResNet-152 and BEiT-B's standout performance, we will concentrate our efforts on them in subsequent experiments, as they have proven to be the most effective models among those tested. 
+
+#### The Effect of the Rendering Technique:
+From the above table, we have seen that the shaded technique was superior, followed by depth, then grayscale in all backbone networks. This fact applied even with the powerful ResNet-152 and BEiT-B. Except with the ViT-B backbone, depth results outperform others. Shaded views may be better because they can convey a more comprehensive set of visual information that aids neural networks in learning to recognize and classify objects more accurately. Depth views also provide valuable spatial information but may lack some surface detail, while grayscale views might omit important color information that could be crucial for distinguishing between similar objects. In the context of 3D object recognition, several works used the shaded technique as the only rendering technique to experiment with their proposed models, such as [MVA-CNN](https://link.springer.com/article/10.1007/s11042-019-7521-8), [MVDAN](https://link.springer.com/article/10.1007/s00521-021-06588-1), and [MVCVT](https://www.sciencedirect.com/science/article/abs/pii/S1047320323001566). However, it's important to note that the best rendering technique can be context-dependent.
+
+#### The Effect of the Backbone Network:
+#### The Effect of the Backbone Network:
+
+
 
 
 Comparison with the selective view-based 3D object classification methods experimented with a single view. OA is overall accuracy, and AA is average accuracy. The best results are shown in bold and underlined:

@@ -124,69 +124,48 @@ For feature extraction, we used the following seven pre-trained backbones sepere
              </p>
 
 ## Training and Testing:             
-To run an experiment, use the following guidline to guide you to which files you should use for training and testing:
-* **Single View Experiment**: run **Training-SV+Voting.ipynb** Jupyter Notebook for training, and **Testing-SV.ipynb** Jupyter Notebook for testing. Note: all samples are used for training; and no fusion needed  in testing.
-* **Majority-Voting Experiment**: run **Training-SV+Voting.ipynb** Jupyter Notebook for training, and **Testing-MV-Voting.ipynb** Jupyter Notebook for testing. Note: all samples are used for training; and late Majority-Voting fusion needed in testing.
-* **Max-polling Experiment**: run **Training-MV-Max+Sum.ipynb** Jupyter Notebook for training, and **Testing-MV-Max+Sum.ipynb** Jupyter Notebook for testing. Note: all samples are used for training; and late fusion needed in testing.
+To run an experiment, use the following guidline to guide you to which files you should run for training and testing:
+* **Single View Experiment**: run **Training-SV+Voting.ipynb** for training, and **Testing-SV.ipynb** for testing. Note: all samples are used for training; and no fusion needed in testing.
+* **Majority-Voting Multi-view Experiment**: run **Training-SV+Voting.ipynb** for training, and **Testing-MV-Voting.ipynb** for testing. Note: all samples are used for training; and late Majority-Voting fusion needed in testing.
+* **Max-pooling Multi-view Experiment**: run **Training-MV-Max+Sum.ipynb** for training, and **Testing-MV-Max+Sum.ipynb** for testing. Note: early Max-pooling fusion needed in training and testing.
+* **Sum-pooling Multi-view Experiment**: run **Training-MV-Max+Sum.ipynb** for training, and **Testing-MV-Max+Sum.ipynb** for testing. Note: early Sax-pooling fusion needed in training and testing.
 
-
-
-**Testing-MV-Max+Sum.ipynb** Jupyter Notebook 
-**Testing-MV-Voting.ipynb** Jupyter Notebook 
-**Testing-SV.ipynb** Jupyter Notebook 
-**Training-MV-Max+Sum.ipynb** Jupyter Notebook
-**Training-SV+Voting.ipynb** Jupyter Notebook 
-
-## Training:
-Jupyter Notebook after you modify the following:
+The following need to be specified before experiment running in all training and testing files:
 1. Track and replace the paths of data and Results folders with your paths:
    ```shell
-   "C:/Users/mona/Desktop/Results/"
-   "C:/Users/mona/Desktop/data/"
+   "./Results/"
+   "./data/"
    ```
-2.   Choose the dataset version and paths:
+2.   Choose the dataset version and path:
    ```shell
-dataset_version= 'modelnet40v1' 
-dataset_train = 'C:/Users/mona/Desktop/data/modelnet40v1_train'
+dataset_version= 'original_modelnet40v1'  
+dataset_train = './data/original_modelnet40v1_train'
 ```
 OR
 ```shell
-dataset_version= 'modelnet40v2'
-dataset_train = 'C:/Users/mona/Desktop/data/modelnet40v2_train'
+dataset_version= 'shaded_modelnet40v1'    
+dataset_train = './data/shaded_modelnet40v1_train' 
 ```
 OR
 ```shell
-dataset_version= 'shaded_modelnet40v2'
-dataset_train = 'C:/Users/mona/Desktop/data/modelnet40v2_train'
+dataset_version= 'depth_modelnet40v1' 
+dataset_train = './data/depth_modelnet40v1_train'
 ```
 3.   Spicify the img size (here 224*224)
 ```shell
-Img_Size= 224 
+Img_Size= 224
 ```
-4.   Spicify the feature extractor (here ResNet152). Note: we only experimented five feature extractors but more options are included in the code.
+4.   Spicify the backbone feature extractor (here BEiT); and run its following code cells. Note: we only experimented seven backbones but more options are included in the code.
 ```shell
-all_deep_models = [ResNet152]
-all_model_name_txt = ["ResNet152"]
+all_model_name_txt = ["BEiT"]
 ````
-5.   Spicify the BATCH_SIZE, EPOCHS, learning_rate:
+5.   Spicify the BATCH_SIZE, Mini_BATCH_SIZE, EPOCHS, learning_rate:
 ```shell
 BATCH_SIZE = 384
-EPOCHS = 20
+Mini_BATCH_SIZE = 32
+EPOCHS = 30
 learning_rate = 0.0001 
 ```
-
-
-## Testing:
-For testing, run **Testing.ipynb** Jupyter Notebook after you modify Steps from 1 to 4, and specify the following selection mechanisms:
-1. Most Similar View (MSV):
-   ```shell
-   selection_mechanism = 'MSV'
-   ```
-   OR
-3. Most Dissimilar View (MDV):
-    ```shell
-   selection_mechanism = 'MDV'
-   ```
 
 ## Results:
 ### Quantitative Results:

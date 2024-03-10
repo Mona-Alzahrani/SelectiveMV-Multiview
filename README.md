@@ -201,7 +201,6 @@ On the other hand, ResNet-152 prefers FCL with max-pooling, the best-performed f
 However, BEiT-B can be considered better than ResNet-152 and all other backbones since it has the highest OA of 92.02% with just 3 views in shaded settings. It even outperformed other models with a single view, reaching an OA of 91.98%. This efficiency with minimal views arguably places BEiT-B at the top of the leaderboard, surpassing ResNet-152 and all other models we tested.
 
 #### The Effect of the Number of Views:
-
 In this experiment, each experimented rendering technique is considered separately with different quantities of selected views. This approach allows for an in-depth analysis of how the number of perspectives within each rendering technique impacts the classification performance of the 3D objects. The relationship between the number of views and the classification accuracy of various 3D classification models including our SelectiveMV model with BEit-B backbone, [Ma et al.](https://ieeexplore.ieee.org/abstract/document/8490588/), [Pairwise](https://openaccess.thecvf.com/content_cvpr_2016/html/Johns_Pairwise_Decomposition_of_CVPR_2016_paper.html), [MVCNN](https://www.cv-foundation.org/openaccess/content_iccv_2015/html/Su_Multi-View_Convolutional_Neural_ICCV_2015_paper.html), and [3DShapeNets](https://www.cv-foundation.org/openaccess/content_cvpr_2015/html/Wu_3D_ShapeNets_A_2015_CVPR_paper.html) is illustrated in the following figure:
 <p align="center">
     <img align="center" src="/images/NoV3.png">

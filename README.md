@@ -168,19 +168,19 @@ learning_rate = 0.0001
 ```
 
 ## Results:
-### Quantitative Results:
-The classification accuracy results of the proposed models using the ModelNet40v1 and ModelNet40v2 datasets when the models trained for 30 epochs are summarized in the bellow Table. This table presents the outcomes of various experiments conducted under different settings. It is worth noting that the proposed approach achieves the best results, an Overall Accuracy (OA) of 83.63% and Average Accuracy (AA) of 83.63%, when only a single view is used for classifying 3D objects. This is observed when the pre-trained ResNet-152 model is employed for feature extraction, and the FCN is used as the classifier, trained with 12 views from ModelNet40v1 dataset (model M<sub>13</sub>). Additionally, when the same feature extractor is trained with 20 views from the ModelNet40v2 dataset, the proposed approach with the FCL classifier demonstrates competitive performance, achieving an OA of 83.7%, but with an AA of 80.39% (model M<sub>15</sub>).
-
-The classification accuracy of our proposed model on ModelNet40v1 and ModelNet40v2 datasets is rendered as 12 views and 20 views for each object, respectively. Each model is trained for 30 epochs. The best results are shown in bold and underlined:
+We start a comparison with existing 3D object classification models. Then, we perform a series of experiments to investigate the variables affecting the classification performance. Then, based on the mentioned analysis, we present the best-selected variables for SelectiveMV and analyze its predicted classes, followed by visualization and analysis of the fundamental selection mechanism. 
+### Comparison with 3D Classification Models:
+Our SelectiveMV model is benchmarked against existing state-of-the-art techniques within both view-based and model-based categories. SelectiveMV demonstrates exceptional performance, outperforming the alternatives, which is a testament to its robustness and effective design. It adeptly handles the input data's intricacies, whether in the form of multi-angle views or complex 3D models, further establishing its superiority in the current landscape of 3D object classification methodologies:
   <p align="center">
-    <img align="center" src="/images/allResults.png">
+    <img align="center" src="/images/comparisionToRW.png">
   </p>
-
-Aso, we investigate the effect of shape representation on the classification of a single view for rendering 3D objects. We utilized the ModelNet40v2 dataset for this experiment, with 12 views per 3D object. However, each 3D object was rendered using the [Phong shading technique](https://dl.acm.org/doi/pdf/10.1145/280811.280980). Shading techniques have been demonstrated to improve performance in models such as [MVDAN](https://link.springer.com/article/10.1007/s00521-021-06588-1) and [MVCNN](https://openaccess.thecvf.com/content_eccv_2018_workshops/w18/html/Su_A_Deeper_Look_at_3D_Shape_Classifiers_ECCVW_2018_paper.html). The rendered views were grayscale images with dimensions of 224*224 pixels and black backgrounds, as depicted in the bellow Figure. The camera's field of view was adjusted so that the image canvas tightly encapsulated the 3D object.
-
-Results of the proposed model with shading as rendering technique:
+  
+### Ablation Study:
+We analyze the effect of backbone networks, rendering techniques, fusion strategy, classifiers, and the number of selected views. 
+#### The Effect of the Backbone Network:
+This experiment focuses on the accuracy of different backbone architectures and rendering techniques of SelectiveMV for feature extraction. These models were tasked with processing all the views, combined using max-pooling as a fusion strategy to generate the global descriptors which later classsify using FCL. The detailed results are reported in the following table:
   <p align="center">
-    <img align="center" src="/images/shadedResults.png">
+    <img align="center" src="/images/BackboneResults.png">
   </p>
 
 

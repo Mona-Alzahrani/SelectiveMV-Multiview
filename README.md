@@ -16,9 +16,8 @@ The model is built in _Visual Studio Code_ editor using:
 2. [Architecture](#architecture)
 3. [Dataset](#dataset)
 4. [Getting Started](#getting-started)
-5. [Training](#training)
-6. [Testing](#testing)
-7. [Results](#results)
+5. [Training and Testing](#training.and.testing)
+6. [Results](#results)
 
 ## Introduction:
 3D classification is complex and challenging because of high-dimensional data, the intricate nature of their spatial relationships, and viewpoint variations. We fill the gap in view-based 3D object classification by examining the factors that influence classification's effectiveness via determining their respective merits in feature extraction for 3D object recognition by comparing CNN-based and Transformer-based backbone networks side-by-side. Our research extends to evaluating various fusion strategies to determine the most effective method for integrating multiple views and ascertain the optimal number of views that balances classification and computation. We also probe into the effectiveness of different feature types from rendering techniques in accurately depicting 3D objects. This investigation is supported by an extensive experimental framework, incorporating a diverse set of 3D objects from the ModelNet40 dataset. Finally, based on the analysis, we present a Selective Multi-View deep model (SelectiveMV) that shows efficient performance and provides high accuracy given a few views.
@@ -220,8 +219,8 @@ It has been found that top confusions happened when: i) "flower pot" predicted a
 ## Citation:
 For those who find the provided code beneficial for their research or work, we kindly request citing the following paper:
 ```
-@article{SelectiveMV2024,
-  title={Selective Multi-View Deep Model for 3D Object Classification},
+@article{SelectiveMV2-2024,
+  title={3D Object Classification With Selective Multi-View Fusion And Shape Rendering},
   author={Alzahrani, Mona and Usman, Muhammad and Alharbi, Randah and Anwar, Saeed and Mian, Ajmal and Helmy, Tarek},
 }
 ```

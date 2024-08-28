@@ -33,7 +33,7 @@ The architecture of the proposed Selective Multi-View deep model (SelectiveMV) c
  <br /> (D) **Classification:** the global descriptor of the object is fed into a classifier to predict its class. The boxes in blue and the number of selected views are the key variables impacting the classification performance we evaluate.
 
 <p align="center">
-  <img align="center"  src="/images/Methodology3.png" title="Illustration of the proposed framework">
+  <img align="center"  src="/images/Methodology4.png" title="Illustration of the proposed framework">
   <figcaption>The architecture of proposed Selective Multi-View deep model (SelectiveMV). The blue boxes (in addition to number of selected views) are the key variables that we evaluate their impact in the classification performance.</figcaption>
 </p>
 
@@ -231,7 +231,7 @@ The comparative analysis illustrated above, clearly underscores the exceptional 
 ### SelectiveMV Analysis:
 Based on the above analysis, we reach the best settings for the SelectiveMV model by using shaded views, BEiT-B, majority-voting, and FCN as the chosen rendering technique, backbone network, fusion strategy, and classifier, respectively. This chosen setting achieved the highest 3D classification accuracies, 91.98%, 92.54%, and 92.79% OA, with only 1, 3, and 6 selected views, respectively. SelectiveMV can achieve 100% accuracy in airplane, bed, car, guitar, and toilet classes and more than 90% in bookshelf, bottle, chair, glass-box, mantel, monitor, piano, range-hood, plant, sofa, and tv-stand classes. The confusion matrix of SelectiveMV with the best settings is shown: 
 <p align="center">
-    <img align="center" src="/images/cm-Beit.png" width="800">
+    <img align="center" src="/images/cm-Beit-100.png" width="800">
     <figcaption> The confusion matrix achieved by the Transformer-based BEiT backbone. </figcaption>
   </p>
   

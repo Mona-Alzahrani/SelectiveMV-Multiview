@@ -255,16 +255,33 @@ The 3D rounded nature objects (e.g., bottles) are characterized by their spheric
   </p>
   
 ## Citation:
-For those who find the provided code beneficial for their research or work, we kindly request citing the following paper:
+For those who find the provided code beneficial for their research or work, we kindly request citing the following papers:
+<br />
+<br />
+Original Paper:
+```
+@InProceedings{SelectiveMV2024,
+    author    = {Alzahrani, Mona and Usman, Muhammad and Anwar, Saeed and Helmy, Tarek},
+    title     = {Selective Multi-View Deep Model for 3D Object Classification},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
+    month     = {June},
+    year      = {2024},
+    pages     = {728-736}
+}
+```
+[Extended work](https://github.com/Mona-Alzahrani/SelectiveMV-Multiview):
 ```
 @article{SelectiveMV2-2024,
   title={3D Object Classification With Selective Multi-View Fusion And Shape Rendering},
   author={Alzahrani, Mona and Usman, Muhammad and Alharbi, Randah and Anwar, Saeed and Mian, Ajmal and Helmy, Tarek},
-  booktitle={In 2024 International Conference on Digital Image Computing: Techniques and Applications (DICTA),
+  booktitle={International Conference on Digital Image Computing: Techniques and Applications (DICTA),
+  month= {November},
   year={2024},
   organization={IEEE}
 }
 ```
+For proper attribution, we kindly request citations to the [original work](https://github.com/Mona-Alzahrani/SelectiveMV) that inspired this work. This paper introduced the selective multi-view deep model for enhancing 3D object classification with single view only. Your acknowledgment through citations is greatly valued.
+
 
 "Please note that the paper is forthcoming. Once the paper is officially published, we will update the citation details accordingly."
 

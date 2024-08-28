@@ -235,7 +235,7 @@ Based on the above analysis, we reach the best settings for the SelectiveMV mode
     <figcaption> The confusion matrix achieved by the Transformer-based BEiT backbone. </figcaption>
   </p>
   
-The SelectiveMV could classify remarkably similar classes, such as dresser and nightstand, with 76% and 69%, respectively. However, the dataset includes the same objects that are classified under different classes such as flower-pot and plant, which confused our classifier and made it able to classify the one class with the highest samples (plant with 240 training objects lead to 88% accuracy) and fail on the another with lowest samples (flower-pot with 149 training objects lead to 4% accuracy):
+The SelectiveMV could classify remarkably similar classes, such as dresser and nightstand, with 88% and 80%, respectively. However, the dataset includes the same objects that are classified under different classes such as flower-pot and plant, which confused our classifier and made it able to classify the one class with the highest samples (plant with 240 training objects lead to 88% accuracy) and fail on the another with lowest samples (flower-pot with 149 training objects lead to 20% accuracy):
 <p align="center">
     <img align="center" src="/images/Similar-2.png" width="800">
     <figcaption>Some of the similar 3D objects from the ModelNet40 training set that belong to different classes: A) Dresser and night-stand, B) Flower-pot and plant. </figcaption>

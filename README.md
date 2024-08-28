@@ -260,6 +260,9 @@ For those who find the provided code beneficial for their research or work, we k
 @article{SelectiveMV2-2024,
   title={3D Object Classification With Selective Multi-View Fusion And Shape Rendering},
   author={Alzahrani, Mona and Usman, Muhammad and Alharbi, Randah and Anwar, Saeed and Mian, Ajmal and Helmy, Tarek},
+  booktitle={In 2024 International Conference on Digital Image Computing: Techniques and Applications (DICTA),
+  year={2024},
+  organization={IEEE}
 }
 ```
 
